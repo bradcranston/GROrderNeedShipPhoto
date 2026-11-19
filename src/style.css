@@ -6,8 +6,7 @@ body {
   line-height: 1;
   color: #000;
   background-color: #fff;
-  margin: 10;
-  overflow: hidden;
+  margin: 10px;
 }
 
 p{
@@ -15,6 +14,10 @@ p{
   font-size: 16px;
 }
 
+td {
+  height: 50px;
+  vertical-align: center;
+}
 
 h1 {
   background-color:#006690;
@@ -25,21 +28,57 @@ h1 {
   margin: 0 0 10px;
 }
 
-.tintedBlackLeft {
-  background-color:#00000033;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.2;
-  padding:11px 11px 11px 0px;
+/* Spinner container */
+.table-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
+/* Spinner animation */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation keyframes */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 button {
-  padding: 5px 9px 5px 9px;
+  padding: 2px 9px 2px 9px;
   border-radius: 3px;
   font-size: 18px;
   border: 1px solid #0091CE;
   background-color: #0091CE;
   color: #fff;
+}
+
+.table-container {
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing */
+}
+
+.table-container .table-wrapper {
+  flex: 0 0 45%; /* Make each table take 45% of the container width */
+  max-width: 45%; /* Prevent tables from growing beyond this size */
+}
+
+table {
+  width: 100%; /* Ensures the table fits its wrapper */
+}
+
+table.dataTable td, 
+table.dataTable th {
+    vertical-align: middle; /* Centers the text vertically */
+    text-align: center;     /* Optional: Centers the text horizontally */
+    padding: 8px;           /* Adjust padding as needed */
 }
